@@ -8,19 +8,25 @@
 #ifndef AGML_HOST_H_
 #define AGML_HOST_H_
 
-#include "host.h"
-
+#include "tcp/Socket.h"
 
 class Host {
 public:
-	Host() {}
-	Host(Socket* s) {
-
-	}
+	int id;
+public:
+	Host() { id = 0; }
+	Host(Socket* s) {}
 
 	~Host() {
 
 	}
+
+
+	long create_node_id();
+
+
+private:
+	int next_node_id = 0;
 };
 
 

@@ -24,6 +24,12 @@ public:
 		pthread_mutex_unlock(&mut);
 	}
 
+	inline void clear() {
+		pthread_mutex_lock(&mut);
+		v.clear();
+		pthread_mutex_unlock(&mut);
+	}
+
 	inline const T& operator[](int i) const {	return v[i];	}
 };
 
